@@ -1,5 +1,5 @@
 # 谷歌drive
-DOMAIN,www.googleapis.com
+DDOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,docs.google.com
 DOMAIN-SUFFIX,drive.google.com
 DOMAIN-SUFFIX,googledrive.com
