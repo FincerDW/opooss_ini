@@ -6,4 +6,5 @@ DOMAIN-SUFFIX,drive.google.com
 DOMAIN-SUFFIX,googledrive.com
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,content-autofill.googleapis.com
+DOMAIN-SUFFIX,driveactivity.clients6.google.com
 PROCESS-NAME,backupandsync
