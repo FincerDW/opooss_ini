@@ -5,4 +5,5 @@ DOMAIN-SUFFIX,oauth2.googleapis.com
 DOMAIN-SUFFIX,drive.google.com
 DOMAIN-SUFFIX,googledrive.com
 DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,content-autofill.googleapis.com
 PROCESS-NAME,backupandsync
