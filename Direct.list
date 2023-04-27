@@ -121,6 +121,7 @@ GEOIP,CN
 # 来源：https://github.com/17mon/china_ip_list/
 # 更新：2021-12-26 21:01:18
 # 数量：6125条
+IP-CIDR,198.169.70.123/32,no-resolve
 IP-CIDR,1.0.1.0/24,no-resolve
 IP-CIDR,1.0.2.0/23,no-resolve
 IP-CIDR,1.0.8.0/21,no-resolve
