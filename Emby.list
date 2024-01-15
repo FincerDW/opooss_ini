@@ -1,5 +1,5 @@
 # emby服务相关规则集
-DOMAIN-SUFFIX,emby.gg
+DOMAIN-SUFFIX,emby.to
 DOMAIN,dmm.emby.wtf
 DOMAIN,dmm.emby.gg
 DOMAIN,lei.emby.gg
@@ -9,4 +9,6 @@ DOMAIN-SUFFIX,jmsooo.com
 DOMAIN-SUFFIX,aaa.ax
 DOMAIN-SUFFIX,pornemby.club
 DOMAIN-SUFFIX,bighippo.tv
-DOMAIN-SUFFIX,push-kr.misakaf.org
+DOMAIN-SUFFIX,stream1.misakaf.org
+DOMAIN-SUFFIX,stream2.misakaf.org
+DOMAIN-SUFFIX,stream3.misakaf.org
