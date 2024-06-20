@@ -17,6 +17,7 @@ DOMAIN,login.live.com
 DOMAIN,logincdn.msauth.net
 DOMAIN,store-images.s-microsoft.com
 DOMAIN-SUFFIX,battle.net
+DOMAIN-SUFFIX,prod.actual.battle.net
 DOMAIN-SUFFIX,battlenet.com.cn
 DOMAIN-SUFFIX,blizzard.com
 DOMAIN-SUFFIX,battlenet.com
