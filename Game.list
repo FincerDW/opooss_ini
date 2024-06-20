@@ -591,7 +591,7 @@ IP-CIDR,185.60.114.159/32,no-resolve
 IP-CIDR,210.71.148.11/32,no-resolve
 IP-CIDR,211.115.104.1/32,no-resolve
 IP-CIDR,24.105.62.129/32,no-resolve
-# DiabloIV-HK,暗黑破坏神4-港服
+
 IP-CIDR,34.0.96.0/19,no-resolve
 IP-CIDR,34.22.64.0/19,no-resolve
 IP-CIDR,34.22.96.0/20,no-resolve
