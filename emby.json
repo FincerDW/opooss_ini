@@ -1,0 +1,22 @@
+{
+  "rules": [
+    {
+      "domain": [
+        "emby-us-v4.mius.uk",
+        "stream1.misakaf.org",
+        "stream2.misakaf.org",
+        "stream3.misakaf.org",
+        "789.123456.al",        
+        "emby.opoodo.top"        
+      ]
+    },
+    {
+      "domain_suffix": [
+        "emby.to",
+        "aca.best",
+        "embyplus.org"
+      ]
+    }
+  ],
+  "version": 1
+}
