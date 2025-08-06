@@ -82,6 +82,7 @@
     { "tag": "🔯 香港自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
+    { "tag": "🚫 adblock", "type": "adblock" },
     { "tag": "➡️ 直连", "type": "direct" }
   ],
   
@@ -109,7 +110,8 @@
      {"rule_set": "geosite-steam", "outbound": "🎮 Steam"},
      {"rule_set": "geosite-onedrive", "outbound": "🐬 OneDrive"},
      {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft"},
-     {"rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择"},
+     {"rule_set": "geosite-adblock", "outbound": "🚫 adblock"},
+     {"rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择"},     
      {"rule_set": ["geoip-cn", "geosite-cn"], "outbound": "➡️ 直连"}
    ],
     
@@ -126,6 +128,7 @@
       { "tag": "geosite-steam", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam@cn.srs", "download_detour": "➡️ 直连" },
       { "tag": "geosite-microsoft", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs", "download_detour": "➡️ 直连" },
       { "tag": "geosite-onedrive", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/onedrive.srs", "download_detour": "➡️ 直连" },
+      { "tag": "geosite-adblock", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Sing-box/main/adblock_reject.srs", "download_detour": "➡️ 直连" },
       { "tag": "geosite-geolocation-!cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "➡️ 直连" },
       { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "➡️ 直连" },
       { "tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs", "download_detour": "➡️ 直连" },
