@@ -1,43 +1,21 @@
 {
-  "log": {
-    "disabled": false,
-    "level": "info",
-    "timestamp": true
-  },
-  
-  "experimental": {
-    "clash_api": {
-      "external_controller": "0.0.0.0:9095",
-      "external_ui": "/etc/sing-box/ui",
-      "secret": "",
-      "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "➡️ 直连",
-      "default_mode": "rule"
-    },
-  "cache_file": {
-    "enabled": true,
-    "path": "/etc/sing-box/cache.db",
-    "store_fakeip": false
-    }
-  },
-
  "dns": 
  {
-   "servers": 
-   [
-     {"tag": "dns_direct", "address": "223.5.5.5", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "➡️ 直连"},
-     {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
-   ],
-   "rules": 
-   [
-     {"outbound": "any", "server": "dns_direct", "disable_cache": true},
-     {"clash_mode": "Direct", "server": "dns_direct"},
-     {"clash_mode": "Global", "server": "dns_proxy"},
-     {"rule_set": "geosite-cn", "server": "dns_direct"},
-     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
-   ],
-   "final": "dns_proxy",
-   "strategy": "ipv4_only"
+   "servers": [
+     {"tag": "local", "type": "udp", "server": "114.114.114.114"},
+     {"tag": "public", "type": "udp", "server": "223.5.5.5"},
+     {"tag": "foreign", "type": "udp", "server": "8.8.8.8"}
+    ],
+   "rules": [
+      {"clash_mode": "direct", "server": "local"},
+      {"clash_mode": "global", "server": "foreign"},
+      {"query_type": "HTTPS","action": "reject"},
+      {"domain_suffix": ["services.googleapis.cn", "googleapis.cn", "xn--ngstr-lra8j.com"],  "server": "foreign"},
+      {"rule_set": ["geosite-cn", "geosite-direct", "geosite-steamcn", "geosite-apple"], "server": "local"}
+    ],
+   "final": "foreign",
+   "strategy": "ipv4_only",
+   "independent_cache": true
 },
 
 "inbounds": [
@@ -74,13 +52,11 @@
   
   "route": 
  {
-   "auto_detect_interface": true,
-   "final": "🐠 兜底策略",
-   "default_mark": 666,
    "rules": 
    [
-     {"action": "sniff"},
-     {"protocol": "dns", "action": "hijack-dns"},
+     {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
+     {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
+     {"ip_is_private": true, "outbound": "🎯 全球直连"},
      {"clash_mode": "direct", "outbound": "➡️ 直连"},
      {"clash_mode": "global", "outbound": "GLOBAL"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "➡️ 直连"},
@@ -120,6 +96,31 @@
       { "tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "➡️ 直连" },
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "➡️ 直连" },
       { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs", "download_detour": "➡️ 直连" }
-    ]
+    ],
+    "final": "🐠 兜底策略",
+    "auto_detect_interface": true,
+    "default_mark": 666,
+    "default_domain_resolver": {"server": "public"}
+  },
+    "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+  
+  "experimental": {
+    "clash_api": {
+      "external_controller": "0.0.0.0:9095",
+      "external_ui": "/etc/sing-box/ui",
+      "secret": "",
+      "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "➡️ 直连",
+      "default_mode": "rule"
+    },
+  "cache_file": {
+    "enabled": true,
+    "path": "/etc/sing-box/cache.db",
+    "store_fakeip": false
+    }
   }
 }
