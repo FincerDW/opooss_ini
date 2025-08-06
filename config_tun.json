@@ -82,7 +82,7 @@
     { "tag": "🔯 香港自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
-    { "tag": "🚫 adblock", "type": "block" },
+    { "tag": "adblock", "type": "block" },
     { "tag": "➡️ 直连", "type": "direct" }
   ],
   
@@ -110,7 +110,7 @@
      {"rule_set": "geosite-steam", "outbound": "🎮 Steam"},
      {"rule_set": "geosite-onedrive", "outbound": "🐬 OneDrive"},
      {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft"},
-     {"rule_set": "geosite-adblock", "outbound": "🚫 adblock"},
+     {"rule_set": "geosite-adblock", "outbound": "adblock"},
      {"rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择"},     
      {"rule_set": ["geoip-cn", "geosite-cn"], "outbound": "➡️ 直连"}
    ],
