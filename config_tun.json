@@ -110,10 +110,9 @@
      {"rule_set": "geosite-steam", "outbound": "🎮 Steam"},
      {"rule_set": "geosite-onedrive", "outbound": "🐬 OneDrive"},
      {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft"},
-     {"rule_set": "geoip-AS132203", "outbound": "➡️ 直连"},
      {"rule_set": "adblock", "outbound": "adblock"},
      {"rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择"},     
-     {"rule_set": ["geoip-cn", "geosite-cn"], "outbound": "➡️ 直连"}
+     {"rule_set": ["geoip-cn", "geosite-cn, geoip-AS132203"], "outbound": "➡️ 直连"}
    ],
     
    "rule_set": [
