@@ -148,7 +148,7 @@
      {"action":"route", "rule_set":["geosite-microsoft"], "outbound":"🎮 Steam"},
      {"action":"route", "rule_set":["geosite-microsoft"], "outbound":"✈️ Speedtest"},
      {"action":"route", "rule_set":["geosite-geolocation-!cn"], "outbound":"🚀 节点选择"},
-     {"action":"route", "rule_set":["geoip-AS132203"], "outbound":"🎯 全球直连"}
+     {"action":"route", "rule_set":["geoip-AS132203"], "outbound":"🎯 全球直连"},
      {"action":"route", "rule_set":["geosite-cn","geoip-cn"], "outbound":"🎯 全球直连"}
    ],
       
